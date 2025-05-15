@@ -23,7 +23,7 @@ This repository contains the **FastAPI-powered AI server**, which supports:
 |----------------|------------|
 | Model Servng   | FastAPI |
 | AI Integration | Vertex AI (Gemini + Imagen) |
-| Deployment     | GCP Clud Run |
+| Deployment     | GCP Cloud Run |
 | Docs           | FastAPI |
 
 ---
