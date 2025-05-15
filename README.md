@@ -1,6 +1,6 @@
 # DearMind-AI
 
-FastAPI based AI Model Server for DearMind - Google Solution Challenge 2025
+FastAPI Powered AI Model Server for DearMind - Google Solution Challenge 2025
 
 ## Project Description
 🎨 AI API for DearMind, an emotion-based arts therapy service
@@ -33,8 +33,7 @@ cd dearmind-ai
 ```
 2. **Docker Image Build**
 ```bash
-git clone https://github.com/your-org/dearmind-ai.git
-cd dearmind-ai
+docker build -t dearmind-ai .
 ```
 3. **Initiate Local Container**
 ```bash
@@ -56,6 +55,8 @@ docker run d -p 8000:8080 -v ${HOME}\.config\gcloud:/root/.config/gcloud my-imag
 ### Deployment (Cloud Run)
 1. **Push Docker Image to Artifact Registry**
 ```bash
+docker build -t dearmind-ai .
+
 docker tag dearmind-ai \
     us-central1-docker.pkg.dev/<PROJECT_ID>/dearmind-ai-repo/dearmind-ai:latest
 
