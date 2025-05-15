@@ -44,20 +44,24 @@ docker build -t dearmind-ai .
 ```
 
 ### 3. Run Docker Container
+Depending on how your Google credentials are configured, choose one of the following methods:
 
+**1. If you have a GOOGLE_APPLICATION_CREDENTIALS file in your local storage**
 ```bash
-# If you have your GOOGLE_APPLICATION_CREDENTIALS file in your local storage
 docker run -d \
 -p 8000:8080 \
 -v /path/to/key.json:/secrets/key.json:ro \
 -e GOOGLE_APPLICATION_CREDENTIALS=/secrets/key.json \
 dearmind-ai
-
-# If you already have your credential values mounted in your environment variable
-# For Linux & Mac
+```
+**2. If you already have your credential values mounted in your environment variable**
+- **For Linux & MacOS**
+ ```bash
 docker run -d -p 8000:8080 -v ~/.config/gcloud:/root/.config/gcloud dearmind-ai
-# For Windows
-docker run d -p 8000:8080 -v ${HOME}\.config\gcloud:/root/.config/gcloud dearmind-ai
+``` 
+- **For Windows**
+```bash
+docker run -d -p 8000:8080 -v ${HOME}\.config\gcloud:/root/.config/gcloud dearmind-ai
 ```
 
 ---
@@ -80,7 +84,8 @@ This server is deployed on Google Cloud Run.
 
 ## 👥 Contributors
 
-- AI: Seunghwan Oh (오승환)      
+- AI: Seunghwan Oh (오승환)
+  
 - PM, Backend, Frontend, and Design: See full team credits in the project presentation
 
 ---
