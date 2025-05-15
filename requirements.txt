@@ -1,0 +1,12 @@
+# Core framework and dependencies
+fastapi
+uvicorn
+pydantic
+Pillow >= 8.0.0
+
+# Google Vertex AI SDK
+google-cloud-aiplatform
+google-generativeai
+
+# HTTP requests
+requests
