@@ -10,7 +10,7 @@ FastAPI Powered AI Model Server for DearMind - Google Solution Challenge 2025
 ### Run Locally
 1. **Clone Repository & Build Your VENV**
 ```bash
-git clone https://github.com/osh925/dearmind-ai.git
+git clone https://github.com/DearMind-Google-SC/DearMind-AI.git
 cd dearmind-ai
 conda create -n YOUR_VENV_NAME
 pip install -r requirements.txt
@@ -28,7 +28,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ### Docker
 1. **Clone Repository**
 ```bash
-git clone https://github.com/your-org/dearmind-ai.git
+git clone https://github.com/DearMind-Google-SC/DearMind-AI.git
 cd dearmind-ai
 ```
 2. **Docker Image Build**
