@@ -1,43 +1,52 @@
 # DearMind-AI
 
-FastAPI Powered AI Model Server for DearMind - Google Solution Challenge 2025
+FastAPI Powered AI Model Server for **DearMind**, a digital art therapy service built for the **Google Solution Challenge 2025**.
 
-## Project Description
-🎨 AI API for DearMind, an emotion-based arts therapy service
+---
 
-## Project Setup
+## 🧠 What is DearMind?
 
-### Run Locally
-1. **Clone Repository & Build Your VENV**
+**DearMind** is a mobile-based digital art therapy service that helps users express emotions through drawings and short journals.  
+The app provides AI-powered emotion analysis, self-care activity recommendations, and personalized visual rewards based on consistent emotional journaling.
+
+This repository contains the **FastAPI-powered AI server**, which supports:
+
+- RAG-based Emotion Analysis
+- Reward picture & letter generation
+- AI chatbot
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer          | Technology |
+|----------------|------------|
+| Model Servng   | FastAPI |
+| AI Integration | Vertex AI (Gemini + Imagen) |
+| Deployment     | GCP Clud Run |
+| Docs           | FastAPI |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/DearMind-Google-SC/DearMind-AI.git
-cd dearmind-ai
-conda create -n YOUR_VENV_NAME
-pip install -r requirements.txt
-```
-2. **Setup your environment variables**
-```bash
-# You will need your own credential file.
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/key.json"
-```
-3. **Run your local server**
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+cd DearMind-AI
 ```
 
-### Docker
-1. **Clone Repository**
-```bash
-git clone https://github.com/DearMind-Google-SC/DearMind-AI.git
-cd dearmind-ai
-```
-2. **Docker Image Build**
+### 2. Build Docker Image
+
 ```bash
 docker build -t dearmind-ai .
 ```
-3. **Initiate Local Container**
+
+### 3. Run Docker Container
+
 ```bash
-# If you have your GOOGLE_APPLICATION_CREDENTIALS file locally
+# If you have your GOOGLE_APPLICATION_CREDENTIALS file in your local storage
 docker run -d \
 -p 8000:8080 \
 -v /path/to/key.json:/secrets/key.json:ro \
@@ -47,28 +56,36 @@ dearmind-ai
 # If you already have your credential values mounted in your environment variable
 # For Linux & Mac
 docker run -d -p 8000:8080 -v ~/.config/gcloud:/root/.config/gcloud dearmind-ai
-
 # For Windows
-docker run d -p 8000:8080 -v ${HOME}\.config\gcloud:/root/.config/gcloud my-image-name
+docker run d -p 8000:8080 -v ${HOME}\.config\gcloud:/root/.config/gcloud dearmind-ai
 ```
 
-### Deployment (Cloud Run)
-1. **Push Docker Image to Artifact Registry**
+---
+
+## 📘 API Documentation
+
+Once the server is running, access the API docs at:
+
 ```bash
-docker build -t dearmind-ai .
-
-docker tag dearmind-ai \
-    us-central1-docker.pkg.dev/<PROJECT_ID>/dearmind-ai-repo/dearmind-ai:latest
-
-docker push us-central1-docker.pkg.dev/<PROJECT_ID>/dearmind-ai-repo/dearmind-ai:latest
+http://localhost:8000/docs
 ```
-2. **Deploy via Google Cloud Run**
-```bash
-# Cloud Run Deployment
-gcloud run deploy dearmind-ai \
---image=us-central1-docker.pkg.dev/<PROJECT_ID>/dearmind-ai-repo/dearmind-ai:latest \
---region=us-central1 \
---platform=managed \
---service-account=<YOUR_SA>@<PROJECT_ID>.iam.gserviceaccount.com \
---allow-unauthenticated
-```
+
+---
+
+## 🚢 Deployment
+
+This server is deployed on Google Cloud Run.
+
+---
+
+## 👥 Contributors
+
+- AI: Seunghwan Oh (오승환)      
+- PM, Backend, Frontend, and Design: See full team credits in the project presentation
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
