@@ -121,8 +121,8 @@ def analyze_diary(
         "\n\nAdditional Context from Retrieval:\n" +
         retrieved +
         "\n\nNow interpret the attached artwork and writing." +
-        "\nAnd if you detect any negative feelings, suggest if the client shows "
-        "a tendency toward suicidal or self-harm—only if you’re quite sure." +
+        "\nAnd if you detect any negative feelings, suggest if the client shows a tendency toward suicidal or self-harm." +
+        "\n**Only** if the **writing** contains explicit evidence of suicidal ideation or self-harm tendency should you suggest emergency; do not infer suicidal or self-harm intent from the artwork alone."
         "\n\n**EXACTLY** output _only_ a JSON array of two strings like [\"emotion\",\"severity\"] "
         "where emotion ∈ {\"positive\",\"depressed\",\"anxious\",\"angry\"} and "
         "severity ∈ {\"safe\",\"emergency\"}. NO OTHER TEXT or explanation."
